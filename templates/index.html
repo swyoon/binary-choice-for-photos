@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Binary Choices for Photo Selection</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+
+    <div class="container">
+        <h1>사진 고르는 것을 도와주세요</h1>
+        <p>by 웅쌍</p>
+        <p>
+            여러 사람의 의견을 종합하여 여러 장의 사진 중 좋은 사진을 골라내기 위한 프로그램입니다. <br>
+            <ol>
+              <li>사용자명을 입력하고 "들어가기"를 누릅니다. 사용자명은 식별용도로만 사용됩니다.</li>
+              <li>두 장의 사진이 반복적으로 보여집니다. 둘 중 더 심미적으로 낫다고 판단되는 사진을 골라주세요.</li>
+              <li>충분히 의견을 개진한 것 같다고 판단되시면 창을 닫아서 종료합니다.</li>
+            </ol>
+
+            보내주신 결과는 종합하여 통계적 분석을 거친 후 사진의 선택에 활용됩니다.
+        </p>
+
+        <form method="post">
+          <div class="form-group">
+            <label for="name">사용자명</label>
+            <input type="text" class="form-control" id="name" aria-describedby="nameHelp" name="username">
+            <small id="nameHelp" class="form-text text-muted">이름을 입력해주세요.</small>
+          </div>
+          <button type="submit" class="btn btn-primary">들어가기</button>
+        </form>
+
+        <br>
+
+        <p>
+          <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            배경이론이 궁금하다면 클릭
+          </button>
+        </p>
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body">
+            인간의 인지능력은 제한되어 있어서 동시에 여러 개의 선택지 중에서 단번에 최선의 선택을 내리는 것은 굉장히 어려운 일입니다.
+            그러나 두 개의 보기 중 어느 것이 더 나은지 고르는 것은 상대적으로 더 쉽고, 이를 이용하면 선택지가 많은 경우의 선택을 보다 빠르고 수월하게 할 수 있습니다.
+            말하자면... 이상형 월드컵 같은 것이죠. <br>
+            본 웹 어플리케이션은 이 이상형 월드컵의 원리(?)를 이용하여 사진 선택을 보다 쉽고 빠르게 하고자 하는 목적을 가지고 개발되었습니다.
+            <br><br>
+            Binary comparison을 통한 사진 선택은 제가 개인적으로 오래 전부터 생각해오던 흥미로운 learning problem입니다.<br>
+            한번에 두 원소끼리만 비교하여 전체 원소의 순위를 정렬하는 문제는 체스 등에서 많이 사용되었습니다. (예: ELO rating system)
+            그러나 우리는 최소한의 비교를 통해서 근사적으로 순위를 매기고 싶으므로, 어떤 두 쌍을 비교할 것인지 정하는 문제는 일종의 active learning problem이 됩니다.
+            또한, 우리는 사진의 특징(feature)을 추출하여 사진을 군집화(clustering)할 수 있으므로, 이것을 어떤 쌍을 선택할지 고르는 과정에 반영하여 보다 효율적인 정보수집을 할 수 있겠죠.
+            단순히 한 명으로부터만 정보를 수집하는 것이 아니라, 여러 사람에게서 정보를 수집하는 crowd sourcing 으로서의 요소도 가지고 있습니다.
+          </div>
+        </div>
+
+    </div>
+</body>
+</html>
